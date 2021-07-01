@@ -21,5 +21,19 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Francisco Cobas Dev`,
+        short_name: `Francisco Cobas`,
+        start_url: `/`,
+        background_color: `#050505`,
+        theme_color: `#050505`,
+        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: `standalone`,
+        icon: `src/images/favicon.ico`, // This path is relative to the root of the site.
+      },
+    },
   ],
 };
