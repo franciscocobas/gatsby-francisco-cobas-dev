@@ -36,6 +36,17 @@ const StyledIndexPageContainer = styled.div`
           @media (min-width: 576px) {
             margin-left: 0;
           }
+          .mobile-logo {
+            @media (min-width: 576px) {
+              display: none;
+            }
+          }
+          .desktop-logo {
+            display: none;
+            @media (min-width: 576px) {
+              display: block;
+            }
+          }
         }
         .contact-links {
           margin-right: 1rem;
@@ -49,51 +60,50 @@ const StyledIndexPageContainer = styled.div`
           }
         }
       }
-      .content {
+      .content-text {
         color: white;
         display: flex;
         flex-direction: column;
-        .content-text {
+        @media (min-width: 576px) {
+          margin-top: 0;
+          display: flex;
+          flex-direction: column;
+        }
+        h1 {
+          font-family: 'IBMPlex';
+          text-align: center;
+          margin-top: 1rem;
           @media (min-width: 576px) {
-            margin-top: 2rem;
-            display: flex;
-            flex-direction: column;
-          }
-          h1 {
-            font-family: 'IBMPlex';
-            text-align: center;
-            margin-top: 1rem;
-            @media (min-width: 576px) {
-              font-size: 4rem;
-              text-align: left;
-            }
-          }
-          .text {
-            font-family: 'IBMPlex';
-            margin: 1rem 2rem 3rem;
-            @media (min-width: 576px) {
-              margin: 0;
-              width: 26rem;
-            }
-          }
-          .contact-links-desktop {
-            display: none;
-            align-self: center;
-            @media (min-width: 576px) {
-              display: block;
-            }
-            img {
-              width: 2rem;
-              height: 2rem;
-              margin: 2rem 0.5rem;
-            }
+            font-size: 4rem;
+            text-align: left;
+            margin-top: 0.5rem;
           }
         }
-        .photo-mobile {
-          position: relative;
+        .text {
+          font-family: 'IBMPlex';
+          margin: 1rem 1.5rem 3rem;
           @media (min-width: 576px) {
-            display: none;
+            margin: 0;
+            width: 26rem;
           }
+        }
+        .contact-links-desktop {
+          display: none;
+          align-self: center;
+          @media (min-width: 576px) {
+            display: block;
+          }
+          img {
+            width: 2rem;
+            height: 2rem;
+            margin: 2rem 0.5rem;
+          }
+        }
+      }
+      .photo-mobile {
+        position: relative;
+        @media (min-width: 576px) {
+          display: none;
         }
       }
     }
@@ -128,48 +138,55 @@ const IndexPage = () => (
           <div className='header'>
             <div className='logo'>
               <img
+                className='desktop-logo'
                 alt='Logo de Francisco Cobas'
                 src={FCLogo}
-                width={50}
-                height={50}
+                width={125}
+                height={125}
+              />
+              <img
+                className='mobile-logo'
+                alt='Logo de Francisco Cobas'
+                src={FCLogo}
+                width={70}
+                height={70}
               />
             </div>
             <div className='contact-links'>
               <ContactLinks />
             </div>
           </div>
-          <div className='content'>
-            <div className='content-text'>
-              <h1>Welcome back</h1>
-              <div className='photo photo-mobile'>
-                <StaticImage
-                  src='../images/foto-perfil.webp'
-                  alt='Foto de perfil'
-                />
-              </div>
-              <div className='text'>
-                <p>
-                  Hello! I’m Francisco Cobas, I do web development writing
-                  Javascript & Typescript code.
-                </p>
-                <p>
-                  I have a considerable experience working with React in a wide
-                  range of projects.
-                </p>
-                <p>
-                  Also I have a background of Operating System experience wich
-                  combine perfectly with my front end abilities. I worked in
-                  many industries such as SAS products, Marketing, Healthcare,
-                  Education and more.
-                </p>
-                <p>
-                  Lately I’ve been working as a cooperative partener at SUBTE
-                  and doing freelancing jobs.
-                </p>
-              </div>
-              <div className='contact-links-desktop'>
-                <ContactLinks />
-              </div>
+
+          <div className='content-text'>
+            <h1>Welcome back</h1>
+            <div className='photo photo-mobile'>
+              <StaticImage
+                src='../images/foto-perfil.webp'
+                alt='Foto de perfil'
+              />
+            </div>
+            <div className='text'>
+              <p>
+                Hello! I’m Francisco Cobas, I do web development writing
+                Javascript & Typescript code.
+              </p>
+              <p>
+                I have a considerable experience working with React in a wide
+                range of projects.
+              </p>
+              <p>
+                Also I have a background of Operating System experience wich
+                combine perfectly with my front end abilities. I worked in many
+                industries such as SAS products, Marketing, Healthcare,
+                Education and more.
+              </p>
+              <p>
+                Lately I’ve been working as a cooperative partener at SUBTE and
+                doing freelancing jobs.
+              </p>
+            </div>
+            <div className='contact-links-desktop'>
+              <ContactLinks />
             </div>
           </div>
         </div>
