@@ -5,7 +5,7 @@ module.exports = {
     description:
       "I'm a web developer working with Javascript and Typescript mainly focus on Front end technologies but also with a solid knowledge of all the web stuff",
     url: 'https://www.franciscocobas.dev',
-    image: '/images/foto-perfil.jpg',
+    image: 'src/images/foto-perfil.jpg',
     twitterUsername: '@MrRobotUy',
   },
   plugins: [
