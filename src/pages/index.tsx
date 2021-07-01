@@ -8,6 +8,7 @@ import FCLogo from '../images/fc-logo.svg';
 import MailLogo from '../images/mail.svg';
 import GithubLogo from '../images/github.svg';
 import LinkedinLogo from '../images/linkedin-logo.svg';
+import SEO from '../components/seo';
 
 const StyledIndexPageContainer = styled.div`
   background-color: var(--background-black);
@@ -100,70 +101,73 @@ const StyledIndexPageContainer = styled.div`
 `;
 
 const IndexPage = () => (
-  <StyledIndexPageContainer>
-    <div className='desktop-container'>
-      <div className='left-panel'>
-        <div className='header'>
-          <div className='logo'>
-            <img src={FCLogo} width={50} height={50} />
-          </div>
-          <div className='contact-links'>
-            <a href='mailto:fcarocena@gmail.com' target='_blank'>
-              <img src={MailLogo} />
-            </a>
-            <a
-              href='https://github.com/franciscocobas'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <img src={GithubLogo} />
-            </a>
-            <a
-              href='https://www.linkedin.com/in/franciscocobas/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <img src={LinkedinLogo} />
-            </a>
-          </div>
-        </div>
-        <div className='content'>
-          <div className='content-text'>
-            <h1>Welcome back</h1>
-            <div className='photo photo-mobile'>
-              <StaticImage
-                src='../images/foto-perfil.webp'
-                alt='Foto de perfil'
-              />
+  <>
+    <SEO />
+    <StyledIndexPageContainer>
+      <div className='desktop-container'>
+        <div className='left-panel'>
+          <div className='header'>
+            <div className='logo'>
+              <img src={FCLogo} width={50} height={50} />
             </div>
-            <div className='text'>
-              <p>
-                Hello! I’m Francisco Cobas, I do web development writing
-                Javascript & Typescript code.
-              </p>
-              <p>
-                I have a considerable experience working with React in a wide
-                range of projects.
-              </p>
-              <p>
-                Also I have a background of Operating System experience wich
-                combine perfectly with my front end abilities. I worked in many
-                industries such as SAS products, Marketing, Healthcare,
-                Education and more.
-              </p>
-              <p>
-                Lately I’ve been working as a cooperative partener at SUBTE and
-                doing freelancing jobs.
-              </p>
+            <div className='contact-links'>
+              <a href='mailto:fcarocena@gmail.com' target='_blank'>
+                <img src={MailLogo} />
+              </a>
+              <a
+                href='https://github.com/franciscocobas'
+                target='_blank'
+                rel='noreferrer'
+              >
+                <img src={GithubLogo} />
+              </a>
+              <a
+                href='https://www.linkedin.com/in/franciscocobas/'
+                target='_blank'
+                rel='noreferrer'
+              >
+                <img src={LinkedinLogo} />
+              </a>
             </div>
           </div>
+          <div className='content'>
+            <div className='content-text'>
+              <h1>Welcome back</h1>
+              <div className='photo photo-mobile'>
+                <StaticImage
+                  src='../images/foto-perfil.webp'
+                  alt='Foto de perfil'
+                />
+              </div>
+              <div className='text'>
+                <p>
+                  Hello! I’m Francisco Cobas, I do web development writing
+                  Javascript & Typescript code.
+                </p>
+                <p>
+                  I have a considerable experience working with React in a wide
+                  range of projects.
+                </p>
+                <p>
+                  Also I have a background of Operating System experience wich
+                  combine perfectly with my front end abilities. I worked in
+                  many industries such as SAS products, Marketing, Healthcare,
+                  Education and more.
+                </p>
+                <p>
+                  Lately I’ve been working as a cooperative partener at SUBTE
+                  and doing freelancing jobs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='photo photo-desktop'>
+          <StaticImage src='../images/foto-perfil.webp' alt='Foto de perfil' />
         </div>
       </div>
-      <div className='photo photo-desktop'>
-        <StaticImage src='../images/foto-perfil.webp' alt='Foto de perfil' />
-      </div>
-    </div>
-  </StyledIndexPageContainer>
+    </StyledIndexPageContainer>
+  </>
 );
 
 export default IndexPage;

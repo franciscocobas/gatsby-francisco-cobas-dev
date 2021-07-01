@@ -1,6 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: 'Francisco Cobas dev',
+    title: 'Welcome',
+    titleTemplate: '%s | Francisco Cobas Dev',
+    description:
+      "I'm a web developer working with Javascript and Typescript mainly focus on Front end technologies but also with a solid knowledge of all the web stuff",
+    url: 'https://www.franciscocobas.dev',
+    image: '/images/foto-perfil.webp',
+    twitterUsername: '@MrRobotUy',
   },
   plugins: [
     'gatsby-plugin-styled-components',
