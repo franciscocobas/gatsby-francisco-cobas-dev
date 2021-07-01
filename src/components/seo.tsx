@@ -48,7 +48,13 @@ const SEO = ({
         <meta property='og:description' content={seo.description} />
       )}
 
-      {seo.image && <meta property='og:image' content={seo.image} />}
+      {seo.image && (
+        <>
+          <meta property='og:image' content={seo.image} />
+          <meta property='og:image:width' content='800' />
+          <meta property='og:image:height' content='800' />
+        </>
+      )}
 
       <meta name='twitter:card' content='summary_large_image' />
 
