@@ -12,9 +12,11 @@ module.exports = {
     'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-google-gtag`,
-      trackingIds: [
-        'G-KMCW05M8K6', // Google Analytics / GA
-      ],
+      options: {
+        trackingIds: [
+          'G-KMCW05M8K6', // Google Analytics / GA
+        ],
+      },
     },
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-sass`,
