@@ -5,10 +5,8 @@ import styled from 'styled-components';
 import '../global.scss';
 
 import FCLogo from '../images/fc-logo.svg';
-import MailLogo from '../images/mail.svg';
-import GithubLogo from '../images/github.svg';
-import LinkedinLogo from '../images/linkedin-logo.svg';
 import SEO from '../components/seo';
+import ContactLinks from '../components/contactLinks';
 
 const StyledIndexPageContainer = styled.div`
   background-color: var(--background-black);
@@ -16,7 +14,6 @@ const StyledIndexPageContainer = styled.div`
   .desktop-container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 1rem 2rem;
     @media (min-width: 576px) {
       padding: 0 0 0 4rem;
       display: flex;
@@ -32,10 +29,16 @@ const StyledIndexPageContainer = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @media (min-width: 576px) {
-          width: 100%;
+        width: 100%;
+        padding-top: 1rem;
+        .logo {
+          margin-left: 1rem;
+          @media (min-width: 576px) {
+            margin-left: 0;
+          }
         }
         .contact-links {
+          margin-right: 1rem;
           @media (min-width: 576px) {
             display: none;
           }
@@ -53,6 +56,8 @@ const StyledIndexPageContainer = styled.div`
         .content-text {
           @media (min-width: 576px) {
             margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
           }
           h1 {
             font-family: 'IBMPlex';
@@ -65,8 +70,22 @@ const StyledIndexPageContainer = styled.div`
           }
           .text {
             font-family: 'Benne';
+            margin: 1rem 2rem;
             @media (min-width: 576px) {
+              margin: 0;
               width: 26rem;
+            }
+          }
+          .contact-links-desktop {
+            display: none;
+            align-self: center;
+            @media (min-width: 576px) {
+              display: block;
+            }
+            img {
+              width: 2rem;
+              height: 2rem;
+              margin: 2rem 0.5rem;
             }
           }
         }
@@ -111,23 +130,7 @@ const IndexPage = () => (
               <img src={FCLogo} width={50} height={50} />
             </div>
             <div className='contact-links'>
-              <a href='mailto:fcarocena@gmail.com' target='_blank'>
-                <img src={MailLogo} />
-              </a>
-              <a
-                href='https://github.com/franciscocobas'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <img src={GithubLogo} />
-              </a>
-              <a
-                href='https://www.linkedin.com/in/franciscocobas/'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <img src={LinkedinLogo} />
-              </a>
+              <ContactLinks />
             </div>
           </div>
           <div className='content'>
@@ -158,6 +161,9 @@ const IndexPage = () => (
                   Lately I’ve been working as a cooperative partener at SUBTE
                   and doing freelancing jobs.
                 </p>
+              </div>
+              <div className='contact-links-desktop'>
+                <ContactLinks />
               </div>
             </div>
           </div>
