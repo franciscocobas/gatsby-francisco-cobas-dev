@@ -6,7 +6,7 @@ import '../global.scss';
 
 import FCLogo from '../images/fc-logo.svg';
 import SEO from '../components/seo';
-import ContactLinks from '../components/contactLinks';
+import ContactLinks from '../components/ContactLinks';
 
 const StyledIndexPageContainer = styled.div`
   background-color: var(--background-black);
