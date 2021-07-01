@@ -53,6 +53,7 @@ const SEO = ({
           <meta property='og:image' content={seo.image} />
           <meta property='og:image:width' content='800' />
           <meta property='og:image:height' content='800' />
+          <meta property='og:image:type' content='image/jpeg' />
         </>
       )}
 
