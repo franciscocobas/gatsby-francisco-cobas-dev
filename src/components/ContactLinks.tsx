@@ -9,21 +9,21 @@ const ContactLinks = () => {
   return (
     <>
       <a href='mailto:fcarocena@gmail.com' target='_blank'>
-        <img src={MailLogo} />
+        <img alt='Logo del Mail' src={MailLogo} />
       </a>
       <a
         href='https://github.com/franciscocobas'
         target='_blank'
         rel='noreferrer'
       >
-        <img src={GithubLogo} />
+        <img alt='Logo de Github' src={GithubLogo} />
       </a>
       <a
         href='https://www.linkedin.com/in/franciscocobas/'
         target='_blank'
         rel='noreferrer'
       >
-        <img src={LinkedinLogo} />
+        <img alt='Logo de Linkedin' src={LinkedinLogo} />
       </a>
     </>
   );

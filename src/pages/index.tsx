@@ -127,7 +127,12 @@ const IndexPage = () => (
         <div className='left-panel'>
           <div className='header'>
             <div className='logo'>
-              <img src={FCLogo} width={50} height={50} />
+              <img
+                alt='Logo de Francisco Cobas'
+                src={FCLogo}
+                width={50}
+                height={50}
+              />
             </div>
             <div className='contact-links'>
               <ContactLinks />
