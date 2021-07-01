@@ -20,9 +20,11 @@ h6 {
 @font-face {
   font-family: 'IBMPlex';
   src: url('./fonts/IBMPlexSans-Regular.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Benne';
   src: url('./fonts/Benne-Regular.ttf');
+  font-display: swap;
 }
