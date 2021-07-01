@@ -70,7 +70,7 @@ const StyledIndexPageContainer = styled.div`
           }
           .text {
             font-family: 'Benne';
-            margin: 1rem 2rem;
+            margin: 1rem 2rem 3rem;
             @media (min-width: 576px) {
               margin: 0;
               width: 26rem;
