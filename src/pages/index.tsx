@@ -69,7 +69,7 @@ const StyledIndexPageContainer = styled.div`
             }
           }
           .text {
-            font-family: 'Benne';
+            font-family: 'IBMPlex';
             margin: 1rem 2rem 3rem;
             @media (min-width: 576px) {
               margin: 0;
