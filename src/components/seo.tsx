@@ -52,6 +52,7 @@ const SEO = ({
       {seo.image && <meta property='og:image:width' content='800' />}
       {seo.image && <meta property='og:image:height' content='800' />}
       {seo.image && <meta property='og:image:type' content='image/jpeg' />}
+      <meta property='og:type' content='website' />
 
       <meta name='twitter:card' content='summary_large_image' />
 
