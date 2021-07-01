@@ -48,14 +48,10 @@ const SEO = ({
         <meta property='og:description' content={seo.description} />
       )}
 
-      {seo.image && (
-        <>
-          <meta property='og:image' content={seo.image} />
-          <meta property='og:image:width' content='800' />
-          <meta property='og:image:height' content='800' />
-          <meta property='og:image:type' content='image/jpeg' />
-        </>
-      )}
+      {seo.image && <meta property='og:image' content={seo.image} />}
+      {seo.image && <meta property='og:image:width' content='800' />}
+      {seo.image && <meta property='og:image:height' content='800' />}
+      {seo.image && <meta property='og:image:type' content='image/jpeg' />}
 
       <meta name='twitter:card' content='summary_large_image' />
 
