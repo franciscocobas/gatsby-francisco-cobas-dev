@@ -11,10 +11,10 @@ module.exports = {
   plugins: [
     'gatsby-plugin-styled-components',
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'G-KMCW05M8K6',
-      },
+      resolve: `gatsby-plugin-google-gtag`,
+      trackingIds: [
+        'G-KMCW05M8K6', // Google Analytics / GA
+      ],
     },
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-sass`,
