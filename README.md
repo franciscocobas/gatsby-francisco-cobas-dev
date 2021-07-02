@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.franciscocobas.dev">
-    <img alt="Gatsby" src="https://www.franciscocobas.dev/logos/foto-perfil.jpg" width="60" />
+    <img alt="Gatsby" src="https://www.franciscocobas.dev/logos/fc-logo.png" width="180" />
   </a>
 </p>
 <h1 align="center">
