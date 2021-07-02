@@ -177,7 +177,7 @@ const IndexPage = () => (
               <p>
                 Also I have a background of Operating System experience wich
                 combine perfectly with my front end abilities. I worked in many
-                industries such as SAS products, Marketing, Healthcare,
+                industries such as SaaS products, Marketing, Healthcare,
                 Education and more.
               </p>
               <p>
