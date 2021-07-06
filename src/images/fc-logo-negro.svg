@@ -11,11 +11,15 @@
    id="Capa_1"
    x="0px"
    y="0px"
-   viewBox="0 0 172 172"
-   style="enable-background:new 0 0 172 172;"
+   viewBox="0 0 200 200"
    xml:space="preserve"
    sodipodi:docname="fc-logo-negro.svg"
-   inkscape:version="1.0.2 (e86c8708, 2021-01-15)"><metadata
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)"
+   width="200"
+   height="200"
+   inkscape:export-filename="/Users/franciscocobas/bitmap.png"
+   inkscape:export-xdpi="248.58455"
+   inkscape:export-ydpi="248.58455"><metadata
    id="metadata27"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
          rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
@@ -35,9 +39,9 @@
    inkscape:zoom="1.4707734"
    inkscape:cx="102.12155"
    inkscape:cy="57.907684"
-   inkscape:window-x="0"
+   inkscape:window-x="1"
    inkscape:window-y="25"
-   inkscape:window-maximized="1"
+   inkscape:window-maximized="0"
    inkscape:current-layer="Capa_1" />
 <style
    type="text/css"
@@ -50,8 +54,8 @@
 <circle
    style="fill:#000000;stroke:#000000;stroke-width:2.33882"
    id="path29"
-   cx="15.243896"
-   cy="27.086348"
+   cx="100"
+   cy="100"
    r="98.830589" /><rect
    class="st3"
    width="172"
@@ -61,7 +65,7 @@
    y="-87.708954" />
 <g
    id="g20"
-   transform="translate(-108.7863,-87.708955)">
+   transform="matrix(0.93896714,0,0,0.93896714,19.248826,19.248826)">
 	<path
    class="st1"
    d="m 0.8,140.7 34,-109.4 h 11.5 l -34,109.4 z"
