@@ -188,7 +188,7 @@ const StyledIndexPageContainer = styled.div`
       }
       a {
         background-color: white;
-        color: var(--magenta);
+        color: black;
         text-decoration: none;
         width: 10rem;
         border-radius: 5px;
