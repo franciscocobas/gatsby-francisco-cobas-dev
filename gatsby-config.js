@@ -4,7 +4,7 @@ module.exports = {
     titleTemplate: '%s | Francisco Cobas Dev',
     description:
       "I'm a web developer working with Javascript and Typescript mainly focus on Front end technologies but also with a solid knowledge of all the web stuff",
-    url: 'https://www.franciscocobas.dev',
+    url: 'https://franciscocobas.dev',
     image: '/logos/foto-perfil.jpg',
     twitterUsername: '@MrRobotUy',
   },
