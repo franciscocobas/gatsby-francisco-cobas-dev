@@ -7,7 +7,7 @@
   Francisco Cobas dev
 </h1>
 
-# This site was built using Gatsby v3
+<h2 align="cente">This site was built using Gatsby v3</h2>
 <p align="center">
   <a href="https://www.gatsbyjs.com">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
