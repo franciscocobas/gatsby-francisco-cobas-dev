@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.franciscocobas.dev">
+  <a href="https://www.franciscocobas.dev" target="_blank">
     <img alt="Gatsby" src="https://www.franciscocobas.dev/logos/fc-logo.png" width="180" />
   </a>
 </p>
