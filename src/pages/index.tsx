@@ -35,6 +35,7 @@ const StyledIndexPageContainer = styled.div`
     }
     .presentation {
       display: flex;
+      justify-content: space-between;
       .left-panel {
         @media (min-width: 576px) {
           margin-top: 2rem;
@@ -155,7 +156,7 @@ const StyledIndexPageContainer = styled.div`
       margin: 0 1rem;
       padding-bottom: 2rem;
       @media (min-width: 576px) {
-        margin: 0 4rem 4rem 0;
+        margin: 4rem 4rem 4rem 0;
       }
       .companies-logos-container {
         margin-top: 2rem;

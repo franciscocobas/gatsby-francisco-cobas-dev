@@ -17,13 +17,25 @@ h6 {
   padding: 0;
   margin: 0;
 }
+.italic {
+  font-family: 'IBMPlexBoldItalic';
+}
 
 @font-face {
   font-family: 'IBMPlex';
   src: url('./fonts/IBMPlexSans-Regular.ttf');
   font-display: swap;
 }
-
+@font-face {
+  font-family: 'IBMPlexBold';
+  src: url('./fonts/IBMPlexSans-Bold.ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBMPlexBoldItalic';
+  src: url('./fonts/IBMPlexSans-BoldItalic.ttf');
+  font-display: swap;
+}
 @font-face {
   font-family: 'Benne';
   src: url('./fonts/Benne-Regular.ttf');
