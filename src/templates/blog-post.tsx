@@ -38,6 +38,23 @@ const StyledBlogPostTemplateContainer = styled.div`
         initial-letter: 2;
       }
     }
+    pre {
+      font-family: 'NanumGothicCoding';
+      background-color: #050505;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 5px;
+      line-height: 1.4;
+      max-width: 30rem;
+      font-size: 0.9rem;
+      overflow-x: auto;
+      .function {
+        color: #dad085;
+      }
+      .lightgray {
+        color: #f8f8f259;
+      }
+    }
   }
 `;
 
