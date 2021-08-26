@@ -42,6 +42,7 @@ const StyledTimerPageComponent = styled.div`
     -webkit-appearance: none;
     -moz-appearance: textfield;
     padding: 0 1rem;
+    text-align: center;
   }
   .header form span {
     font-size: 2rem;
@@ -95,9 +96,11 @@ const StyledTimerPageComponent = styled.div`
   }
 `;
 
+const DEFAULT_TIMER_TIME = new Date(0, 0, 0, 0, 15, 0);
+
 const IndexPage = () => {
   const interval = useRef<any>(null);
-  const [timer, setTimer] = useState<Date>(new Date(0, 0, 0, 0, 15, 5));
+  const [timer, setTimer] = useState<Date>(DEFAULT_TIMER_TIME);
   const { register, handleSubmit, watch, getValues } = useForm();
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
   const [timerFinished, setTimerFinished] = useState<boolean>(false);
@@ -133,7 +136,11 @@ const IndexPage = () => {
       setTimer((cTimer) => {
         let newSecond = cTimer.getSeconds();
         newSecond--;
-        if (newSecond === 0) {
+        if (
+          cTimer.getHours() === 0 &&
+          cTimer.getMinutes() === 0 &&
+          newSecond === 0
+        ) {
           setTimerFinished(true);
           clearInterval(interval.current);
           return new Date(0, 0, 0, 0, 0, 0);
@@ -174,18 +181,21 @@ const IndexPage = () => {
                 type='number'
                 {...register('hours', { max: 2 })}
                 disabled={isTimerRunning}
+                defaultValue={DEFAULT_TIMER_TIME.getHours()}
               />
               <span>:</span>
               <input
                 type='number'
                 {...register('minutes', { max: 2 })}
                 disabled={isTimerRunning}
+                defaultValue={DEFAULT_TIMER_TIME.getMinutes()}
               />
               <span>:</span>
               <input
                 type='number'
                 {...register('seconds', { max: 2 })}
                 disabled={isTimerRunning}
+                defaultValue={DEFAULT_TIMER_TIME.getSeconds()}
               />
               <button onClick={startOrStopTimer}>
                 {isTimerRunning ? 'Stop' : 'Start'}
