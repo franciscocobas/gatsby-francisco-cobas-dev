@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import MailLogo from '../images/mail.svg';
 import GithubLogo from '../images/github.svg';
 import LinkedinLogo from '../images/linkedin-logo.svg';
+import TwitchLogo from '../images/twitch.svg';
 
 const ContactLinks = () => {
   return (
@@ -24,6 +25,13 @@ const ContactLinks = () => {
         rel='noreferrer'
       >
         <img alt='Logo de Linkedin' src={LinkedinLogo} />
+      </a>
+      <a
+        href='https://www.twitch.tv/franciscodev_uy/'
+        target='_blank'
+        rel='noreferrer'
+      >
+        <img alt='Logo de Linkedin' src={TwitchLogo} />
       </a>
     </>
   );
