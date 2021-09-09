@@ -105,11 +105,11 @@ function SurveyForm(): JSX.Element {
   } = useForm<Inputs>();
   const [platform, setPlatform] = useState<string>('');
   const [showConsent, setShowConsent] = useState<boolean>(false);
-  const watchAge = watch('age');
+  const watchInputs = watch(['age', 'role']);
 
   useEffect(() => {
-    setShowConsent(watchAge > 0 && watchAge < 18);
-  }, [watchAge]);
+    setShowConsent(watchInputs[0] > 0 && watchInputs[0] < 18);
+  }, [watchInputs]);
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
@@ -130,12 +130,14 @@ function SurveyForm(): JSX.Element {
             <option value='tester'>Tester</option>
             <option value='product-manager'>Product Manger</option>
           </select>
-          <select {...register('tech')}>
-            <option value=''>Technology</option>
-            <option value='javascript'>JavaScript</option>
-            <option value='ruby'>Ruby on rails</option>
-            <option value='pyton'>Python</option>
-          </select>
+          {watchInputs[1] === 'developer' && (
+            <select {...register('tech')}>
+              <option value=''>Technology</option>
+              <option value='javascript'>JavaScript</option>
+              <option value='ruby'>Ruby on rails</option>
+              <option value='pyton'>Python</option>
+            </select>
+          )}
           <textarea
             placeholder='Leave me a comment'
             {...register('comment')}

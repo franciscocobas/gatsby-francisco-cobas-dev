@@ -21,10 +21,6 @@ const StyledSurveyPageContainer = styled.div`
       width: 10rem;
       height: 10rem;
     }
-    .logo {
-      width: 10rem;
-      height: 10rem;
-    }
     h1 {
       margin-left: 12rem;
       font-family: 'IBMPlexExtraLight';
