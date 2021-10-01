@@ -5,6 +5,9 @@ import styled from 'styled-components';
 import TwitchIcon from '../images/twitch_black.svg';
 import TwitterIcon from '../images/twitter.svg';
 import LinkedInIcon from '../images/linkedin_black.svg';
+import TwitchSvg from './svg-components/TwitchSvg';
+import TwitterSvg from './svg-components/TwitterSvg';
+import LinkedInSvg from './svg-components/LinkedInSvg';
 
 const SurveyFormContainer = styled.div`
   .error {
@@ -28,12 +31,16 @@ const SurveyFormContainer = styled.div`
       padding: 0 1rem;
       margin: 1rem 0;
       border-radius: 5px;
+      font-size: 1rem;
+      border: none;
     }
     textarea {
       height: 10rem;
       padding: 1rem;
       margin: 1rem 0;
       border-radius: 5px;
+      font-size: 1rem;
+      border: none;
     }
     button {
       height: 3rem;
@@ -48,9 +55,31 @@ const SurveyFormContainer = styled.div`
       display: flex;
       justify-content: space-between;
       margin: 1rem 0;
+      button {
+        svg {
+          width: 2rem;
+          height: 2rem;
+        }
+        &:hover {
+          background: #e72f7258;
+          svg {
+            fill: white;
+          }
+        }
+        &.active {
+          background: #e72f73;
+          svg {
+            fill: white;
+          }
+        }
+      }
     }
     p {
       text-align: center;
+      &.error-msg {
+        text-align: left;
+        margin-top: 0;
+      }
     }
     .consent-container {
       display: flex;
@@ -59,8 +88,9 @@ const SurveyFormContainer = styled.div`
         width: 2rem;
         height: 2rem;
       }
-      p {
+      label {
         margin-left: 1rem;
+        text-align: left;
       }
     }
     button[type='button'] {
@@ -68,16 +98,6 @@ const SurveyFormContainer = styled.div`
       width: 3.5rem;
       background: white;
       margin: 0;
-      img {
-        width: 2rem;
-        height: 2rem;
-      }
-      &.active {
-        background: #e72f73;
-        img {
-          fill: white;
-        }
-      }
     }
     button[type='submit'] {
       font-weight: bold;
@@ -105,14 +125,14 @@ function SurveyForm(): JSX.Element {
   } = useForm<Inputs>();
   const [platform, setPlatform] = useState<string>('');
   const [showConsent, setShowConsent] = useState<boolean>(false);
-  const watchInputs = watch(['age', 'role']);
+  const [age, role] = watch(['age', 'role']);
 
   useEffect(() => {
-    setShowConsent(watchInputs[0] > 0 && watchInputs[0] < 18);
-  }, [watchInputs]);
+    setShowConsent(age > 0 && age < 18);
+  }, [age, role]);
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
+    if (data.role !== 'developer') data.tech = '';
     reset();
   };
   return (
@@ -130,12 +150,16 @@ function SurveyForm(): JSX.Element {
             <option value='tester'>Tester</option>
             <option value='product-manager'>Product Manger</option>
           </select>
-          {watchInputs[1] === 'developer' && (
+          {errors.role && <p className='error-msg'>* Role field is required</p>}
+          {role === 'developer' && (
             <select {...register('tech')}>
               <option value=''>Technology</option>
               <option value='javascript'>JavaScript</option>
               <option value='ruby'>Ruby on rails</option>
               <option value='pyton'>Python</option>
+              <option value='pyton'>C#</option>
+              <option value='pyton'>PHP</option>
+              <option value='pyton'>Java</option>
             </select>
           )}
           <textarea
@@ -151,37 +175,57 @@ function SurveyForm(): JSX.Element {
               onClick={() => setPlatform('twitch')}
               className={`${platform === 'twitch' ? 'active' : ''}`}
             >
-              <img src={TwitchIcon} alt='Logo de Twitch' />
+              <TwitchSvg />
             </button>
             <button
               type='button'
               onClick={() => setPlatform('twitter')}
               className={`${platform === 'twitter' ? 'active' : ''}`}
             >
-              <img src={TwitterIcon} alt='Logo de Twitter' />
+              <TwitterSvg />
             </button>
             <button
               type='button'
               onClick={() => setPlatform('linkedin')}
               className={`${platform === 'linkedin' ? 'active' : ''}`}
             >
-              <img src={LinkedInIcon} alt='Logo de LinkedIn' />
+              <LinkedInSvg />
             </button>
           </div>
           <input
             type='number'
             placeholder='Age'
             {...register('age', {
-              min: 7,
+              min: 17,
               required: true,
             })}
             className={`${errors.age ? 'error' : ''}`}
           />
+          {errors.age && <p className='error-msg'>* Age field is required</p>}
           {showConsent && (
-            <div className='consent-container'>
-              <input type='checkbox' {...register('consent')} />
-              <p>I have consent of been supervised by an adult</p>
-            </div>
+            <>
+              <div className='consent-container'>
+                <input
+                  id='consent-input'
+                  type='checkbox'
+                  {...register('consent', {
+                    validate: (value) => {
+                      console.log(value);
+                      return value === true;
+                    },
+                  })}
+                  className={`${errors.consent ? 'error' : ''}`}
+                />
+                <label htmlFor='consent-input'>
+                  I have consent of been supervised by an adult
+                </label>
+              </div>
+              {errors.consent && (
+                <p className='error-msg'>
+                  * You have to check the consent in order to submit the form
+                </p>
+              )}
+            </>
           )}
 
           <button type='submit'>SUBMIT</button>
