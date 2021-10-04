@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import SEO from '../components/seo';
 import SurveyForm from '../components/SurveyForm';
 
+import '../global.scss';
+
 import FCLogo from '../images/fc-logo.svg';
 
 const StyledSurveyPageContainer = styled.div`
@@ -39,7 +41,10 @@ const StyledSurveyPageContainer = styled.div`
 function SurveyPage(): JSX.Element {
   return (
     <>
-      <SEO description='This page es for showcasing the react-hook-form usage.' />
+      <SEO
+        title='Developer survey'
+        description='This page es for showcasing the react-hook-form usage.'
+      />
       <StyledSurveyPageContainer>
         <div className='main-wrapper'>
           <div className='header'>
