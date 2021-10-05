@@ -51,6 +51,9 @@ const SurveyFormContainer = styled.div`
       border: none;
       border-radius: 5px;
     }
+    .platform-text {
+      margin-bottom: 0;
+    }
     .platform-icons-container {
       display: flex;
       justify-content: space-between;
