@@ -35,38 +35,32 @@ const SEO = ({
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
-      <meta name='description' content={seo.description} />
-      <meta name='image' content={seo.image} />
+      <meta content={seo.description} name="description" />
+      <meta content={seo.image} name="image" />
 
-      {seo.url && <meta property='og:url' content={seo.url} />}
+      {seo.url && <meta content={seo.url} property="og:url" />}
 
-      {(article ? true : null) && <meta property='og:type' content='article' />}
+      {(article ? true : null) && <meta content="article" property="og:type" />}
 
-      {seo.title && <meta property='og:title' content={seo.title} />}
+      {seo.title && <meta content={seo.title} property="og:title" />}
 
-      {seo.description && (
-        <meta property='og:description' content={seo.description} />
-      )}
+      {seo.description && <meta content={seo.description} property="og:description" />}
 
-      {seo.image && <meta property='og:image' content={seo.image} />}
-      {seo.image && <meta property='og:image:width' content='800' />}
-      {seo.image && <meta property='og:image:height' content='800' />}
-      {seo.image && <meta property='og:image:type' content='image/jpeg' />}
-      <meta property='og:type' content='website' />
+      {seo.image && <meta content={seo.image} property="og:image" />}
+      {seo.image && <meta content="800" property="og:image:width" />}
+      {seo.image && <meta content="800" property="og:image:height" />}
+      {seo.image && <meta content="image/jpeg" property="og:image:type" />}
+      <meta content="website" property="og:type" />
 
-      <meta name='twitter:card' content='summary_large_image' />
+      <meta content="summary_large_image" name="twitter:card" />
 
-      {twitterUsername && (
-        <meta name='twitter:creator' content={twitterUsername} />
-      )}
+      {twitterUsername && <meta content={twitterUsername} name="twitter:creator" />}
 
-      {seo.title && <meta name='twitter:title' content={seo.title} />}
+      {seo.title && <meta content={seo.title} name="twitter:title" />}
 
-      {seo.description && (
-        <meta name='twitter:description' content={seo.description} />
-      )}
+      {seo.description && <meta content={seo.description} name="twitter:description" />}
 
-      {seo.image && <meta name='twitter:image' content={seo.image} />}
+      {seo.image && <meta content={seo.image} name="twitter:image" />}
     </Helmet>
   );
 };

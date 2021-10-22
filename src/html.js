@@ -3,23 +3,16 @@ import PropTypes from 'prop-types';
 
 export default function HTML(props) {
   return (
-    <html {...props.htmlAttributes} lang='es'>
+    <html {...props.htmlAttributes} lang="es">
       <head>
-        <meta charSet='utf-8' />
-        <meta httpEquiv='x-ua-compatible' content='ie=edge' />
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1, shrink-to-fit=no'
-        />
+        <meta charSet="utf-8" />
+        <meta content="ie=edge" httpEquiv="x-ua-compatible" />
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
-        <div
-          key={`body`}
-          id='___gatsby'
-          dangerouslySetInnerHTML={{ __html: props.body }}
-        />
+        <div dangerouslySetInnerHTML={{ __html: props.body }} key={`body`} id="___gatsby" />
         {props.postBodyComponents}
       </body>
     </html>

@@ -6,7 +6,6 @@ import '../global.scss';
 
 import SEO from '../components/seo';
 import ContactLinks from '../components/ContactLinks';
-
 import FCLogo from '../images/fc-logo.svg';
 import CeibalLogo from '../images/logo-horizontal-ceibal.svg';
 import FastcallLogo from '../images/logo-fastcall.svg';
@@ -205,119 +204,85 @@ const IndexPage = () => (
   <>
     <SEO />
     <StyledIndexPageContainer>
-      <div className='desktop-container'>
-        <div className='presentation'>
-          <div className='left-panel'>
-            <div className='header'>
-              <div className='logo'>
+      <div className="desktop-container">
+        <div className="presentation">
+          <div className="left-panel">
+            <div className="header">
+              <div className="logo">
                 <img
-                  className='desktop-logo'
-                  alt='Logo de Francisco Cobas'
+                  alt="Logo de Francisco Cobas"
+                  className="desktop-logo"
+                  height={125}
                   src={FCLogo}
                   width={125}
-                  height={125}
                 />
                 <img
-                  className='mobile-logo'
-                  alt='Logo de Francisco Cobas'
+                  alt="Logo de Francisco Cobas"
+                  className="mobile-logo"
+                  height={70}
                   src={FCLogo}
                   width={70}
-                  height={70}
                 />
               </div>
-              <div className='contact-links'>
+              <div className="contact-links">
                 <ContactLinks />
               </div>
             </div>
 
-            <div className='content-text'>
+            <div className="content-text">
               <h1>Welcome back</h1>
-              <div className='photo photo-mobile'>
-                <StaticImage
-                  src='../images/foto-perfil.webp'
-                  alt='Foto de perfil'
-                />
+              <div className="photo photo-mobile">
+                <StaticImage alt="Foto de perfil" src="../images/foto-perfil.webp" />
               </div>
-              <div className='text'>
+              <div className="text">
                 <p>
-                  Hello! I’m Francisco Cobas, I do web development writing
-                  Javascript & Typescript code.
+                  Hello! I’m Francisco Cobas, I do web development writing Javascript & Typescript
+                  code.
                 </p>
                 <p>
-                  I have a considerable experience working with React in a wide
-                  range of projects.
+                  I have a considerable experience working with React in a wide range of projects.
                 </p>
                 <p>
-                  Also I have a background of Operating System experience wich
-                  combine perfectly with my front end abilities. I worked in
-                  many industries such as SaaS products, Marketing, Healthcare,
-                  Education and more.
+                  Also I have a background of Operating System experience wich combine perfectly
+                  with my front end abilities. I worked in many industries such as SaaS products,
+                  Marketing, Healthcare, Education and more.
                 </p>
                 <p>
-                  Lately I’ve been working as a cooperative partener at SUBTE
-                  and doing freelancing jobs.
+                  Lately I’ve been working as a cooperative partener at SUBTE and doing freelancing
+                  jobs.
                 </p>
               </div>
-              <div className='contact-links-desktop'>
+              <div className="contact-links-desktop">
                 <ContactLinks />
               </div>
             </div>
           </div>
-          <div className='photo photo-desktop'>
-            <StaticImage
-              src='../images/foto-perfil.webp'
-              alt='Foto de perfil'
-            />
+          <div className="photo photo-desktop">
+            <StaticImage alt="Foto de perfil" src="../images/foto-perfil.webp" />
           </div>
         </div>
-        <div className='companies-i-worked-on'>
-          <div className='divider'></div>
+        <div className="companies-i-worked-on">
+          <div className="divider" />
           <h2>Companies that trusted on me</h2>
-          <div className='companies-logos-container'>
-            <a
-              href='https://www.ceibal.edu.uy/'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <img
-                src={CeibalLogo}
-                alt='Logo de Ceibal'
-                width='367'
-                height='112'
-              />
+          <div className="companies-logos-container">
+            <a href="https://www.ceibal.edu.uy/" rel="noopener noreferrer" target="_blank">
+              <img alt="Logo de Ceibal" height="112" src={CeibalLogo} width="367" />
             </a>
-            <a
-              href='https://fastcall.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <img
-                src={FastcallLogo}
-                alt='Logo de Fastcall'
-                width='367'
-                height='78'
-              />
+            <a href="https://fastcall.com/" rel="noopener noreferrer" target="_blank">
+              <img alt="Logo de Fastcall" height="78" src={FastcallLogo} width="367" />
             </a>
-            <a
-              href='https://www.devicemagic.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <img
-                src={DeviceMagicLogo}
-                alt='Logo de Device Magic'
-                width='367'
-                height='78'
-              />
+            <a href="https://www.devicemagic.com/" rel="noopener noreferrer" target="_blank">
+              <img alt="Logo de Device Magic" height="78" src={DeviceMagicLogo} width="367" />
             </a>
           </div>
         </div>
-        <div className='contact'>
-          <div className='divider'></div>
+        <div className="contact">
+          <div className="divider" />
           <h2>Do you want to build a project together?</h2>
           <a
             href={`mailto:fcarocena@gmail.com?&subject=Hello Francisco, let's go to the 🌔with this project!`}
-            target='_blank'
+            rel="noreferrer"
+            target="_blank"
           >
             Contact me
           </a>

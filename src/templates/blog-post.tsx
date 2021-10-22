@@ -1,8 +1,8 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import SEO from '../components/seo';
 import styled from 'styled-components';
 
+import SEO from '../components/seo';
 import FCLogo from '../images/fc-logo-negro.svg';
 
 const StyledBlogPostTemplateContainer = styled.div`
@@ -70,26 +70,24 @@ type BlogPostTemplateTypes = {
   };
 };
 
-const BlogPostTemplate = ({
-  data: { markdownRemark: post },
-}: BlogPostTemplateTypes) => {
+const BlogPostTemplate = ({ data: { markdownRemark: post } }: BlogPostTemplateTypes) => {
   return (
     <StyledBlogPostTemplateContainer>
       <SEO
-        title={`${post.frontmatter.title} | Francisco Cobas Dev`}
-        description={post.frontmatter.description}
         article
+        description={post.frontmatter.description}
+        title={`${post.frontmatter.title} | Francisco Cobas Dev`}
       />
-      <div className='desktop-container'>
+      <div className="desktop-container">
         <header>
-          <img src={FCLogo} alt='Logo de Francisco Cobas Dev' />
+          <img alt="Logo de Francisco Cobas Dev" src={FCLogo} />
           <p>
-            <span className='italic'>b</span>log
+            <span className="italic">b</span>log
           </p>
         </header>
         <article>
-          <h1 className='blog-entry-title'>{post.frontmatter.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+          <h1 className="blog-entry-title">{post.frontmatter.title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </article>
       </div>
     </StyledBlogPostTemplateContainer>

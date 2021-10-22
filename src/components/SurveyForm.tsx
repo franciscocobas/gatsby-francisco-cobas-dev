@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import styled from 'styled-components';
 
-import TwitchIcon from '../images/twitch_black.svg';
-import TwitterIcon from '../images/twitter.svg';
-import LinkedInIcon from '../images/linkedin_black.svg';
 import TwitchSvg from './svg-components/TwitchSvg';
 import TwitterSvg from './svg-components/TwitterSvg';
 import LinkedInSvg from './svg-components/LinkedInSvg';
@@ -138,6 +135,7 @@ function SurveyForm(): JSX.Element {
     if (data.role !== 'developer') data.tech = '';
     reset();
   };
+
   return (
     <SurveyFormContainer>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -148,90 +146,84 @@ function SurveyForm(): JSX.Element {
             })}
             className={`${errors.role ? 'error' : ''}`}
           >
-            <option value=''>Role</option>
-            <option value='developer'>Developer</option>
-            <option value='tester'>Tester</option>
-            <option value='product-manager'>Product Manger</option>
+            <option value="">Role</option>
+            <option value="developer">Developer</option>
+            <option value="tester">Tester</option>
+            <option value="product-manager">Product Manger</option>
           </select>
-          {errors.role && <p className='error-msg'>* Role field is required</p>}
+          {errors.role && <p className="error-msg">* Role field is required</p>}
           {role === 'developer' && (
             <select {...register('tech')}>
-              <option value=''>Technology</option>
-              <option value='javascript'>JavaScript</option>
-              <option value='ruby'>Ruby on rails</option>
-              <option value='pyton'>Python</option>
-              <option value='pyton'>C#</option>
-              <option value='pyton'>PHP</option>
-              <option value='pyton'>Java</option>
+              <option value="">Technology</option>
+              <option value="javascript">JavaScript</option>
+              <option value="ruby">Ruby on rails</option>
+              <option value="pyton">Python</option>
+              <option value="pyton">C#</option>
+              <option value="pyton">PHP</option>
+              <option value="pyton">Java</option>
             </select>
           )}
-          <textarea
-            placeholder='Leave me a comment'
-            {...register('comment')}
-          ></textarea>
-          <p className='platform-text'>
-            Select in which platform you follow me
-          </p>
-          <div className='platform-icons-container'>
+          <p placeholder="Leave me a comment" {...register('comment')} />
+          <p className="platform-text">Select in which platform you follow me</p>
+          <div className="platform-icons-container">
             <button
-              type='button'
-              onClick={() => setPlatform('twitch')}
               className={`${platform === 'twitch' ? 'active' : ''}`}
+              type="button"
+              onClick={() => setPlatform('twitch')}
             >
               <TwitchSvg />
             </button>
             <button
-              type='button'
-              onClick={() => setPlatform('twitter')}
               className={`${platform === 'twitter' ? 'active' : ''}`}
+              type="button"
+              onClick={() => setPlatform('twitter')}
             >
               <TwitterSvg />
             </button>
             <button
-              type='button'
-              onClick={() => setPlatform('linkedin')}
               className={`${platform === 'linkedin' ? 'active' : ''}`}
+              type="button"
+              onClick={() => setPlatform('linkedin')}
             >
               <LinkedInSvg />
             </button>
           </div>
           <input
-            type='number'
-            placeholder='Age'
+            placeholder="Age"
+            type="number"
             {...register('age', {
               min: 17,
               required: true,
             })}
             className={`${errors.age ? 'error' : ''}`}
           />
-          {errors.age && <p className='error-msg'>* Age field is required</p>}
+          {errors.age && <p className="error-msg">* Age field is required</p>}
           {showConsent && (
             <>
-              <div className='consent-container'>
+              <div className="consent-container">
                 <input
-                  id='consent-input'
-                  type='checkbox'
+                  id="consent-input"
+                  type="checkbox"
                   {...register('consent', {
                     validate: (value) => {
                       console.log(value);
+
                       return value === true;
                     },
                   })}
                   className={`${errors.consent ? 'error' : ''}`}
                 />
-                <label htmlFor='consent-input'>
-                  I have consent of been supervised by an adult
-                </label>
+                <label htmlFor="consent-input">I have consent of been supervised by an adult</label>
               </div>
               {errors.consent && (
-                <p className='error-msg'>
+                <p className="error-msg">
                   * You have to check the consent in order to submit the form
                 </p>
               )}
             </>
           )}
 
-          <button type='submit'>SUBMIT</button>
+          <button type="submit">SUBMIT</button>
         </div>
       </form>
     </SurveyFormContainer>

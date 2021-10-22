@@ -7,10 +7,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: frontmatter___date }
-        limit: 100
-      ) {
+      allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }, limit: 100) {
         edges {
           node {
             id
@@ -25,12 +22,12 @@ exports.createPages = async ({ actions, graphql }) => {
   `);
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    if (process.env.NODE_ENV === 'production' && !node.frontmatter.public)
-      return;
+    if (process.env.NODE_ENV === 'production' && !node.frontmatter.public) return;
     createPage({
       path: node.frontmatter.path,
       component: blogPostTemplate,
       context: {},
+      defer: true,
     });
   });
 };

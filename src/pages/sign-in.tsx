@@ -1,8 +1,6 @@
 import React from 'react';
 
-interface Props {}
-
-function SignIn(props: Props): JSX.Element {
+function SignIn(): JSX.Element {
   return <div>{`<SignIn />`}</div>;
 }
 
