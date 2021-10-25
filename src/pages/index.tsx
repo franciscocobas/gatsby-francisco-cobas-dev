@@ -10,6 +10,7 @@ import FCLogo from '../images/fc-logo.svg';
 import CeibalLogo from '../images/logo-horizontal-ceibal.svg';
 import FastcallLogo from '../images/logo-fastcall.svg';
 import DeviceMagicLogo from '../images/logo-device-magic.svg';
+import ProfilePicture from '../components/ProfilePicture';
 
 const StyledIndexPageContainer = styled.div`
   background-color: var(--background-black);
@@ -99,6 +100,24 @@ const StyledIndexPageContainer = styled.div`
               margin: 0;
               width: 26rem;
             }
+            .highlighted-text {
+              position: relative;
+              z-index: 1;
+            }
+            .highlighted-text:before {
+              position: absolute;
+              content: '';
+              width: 45px;
+              height: 18px;
+              left: -3px;
+              top: -2px;
+              background: linear-gradient(-10deg, var(--custom-blue), var(--magenta));
+              padding: 5px;
+              z-index: -1;
+              transform: rotate(-5deg);
+              border-radius: 0 3px 0 3px;
+              filter: blur(2px);
+            }
           }
           .contact-links-desktop {
             display: none;
@@ -118,24 +137,6 @@ const StyledIndexPageContainer = styled.div`
           @media (min-width: 576px) {
             display: none;
           }
-        }
-      }
-      .photo {
-        position: relative;
-        &:after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 3rem;
-          background: linear-gradient(transparent, var(--background-black));
-          left: 0;
-          bottom: 0;
-        }
-      }
-      .photo-desktop {
-        display: none;
-        @media (min-width: 576px) {
-          display: block;
         }
       }
     }
@@ -232,12 +233,15 @@ const IndexPage = () => (
             <div className="content-text">
               <h1>Welcome back</h1>
               <div className="photo photo-mobile">
-                <StaticImage alt="Foto de perfil" src="../images/foto-perfil.webp" />
+                <StaticImage
+                  alt="Foto de perfil"
+                  src="../images/foto-perfil-fondo-transparente.webp"
+                />
               </div>
               <div className="text">
                 <p>
-                  Hello! I’m Francisco Cobas, I do web development writing Javascript & Typescript
-                  code.
+                  <span className="highlighted-text">Hello!</span> I’m Francisco Cobas, I do web
+                  development writing Javascript & Typescript code.
                 </p>
                 <p>
                   I have a considerable experience working with React in a wide range of projects.
@@ -257,9 +261,7 @@ const IndexPage = () => (
               </div>
             </div>
           </div>
-          <div className="photo photo-desktop">
-            <StaticImage alt="Foto de perfil" src="../images/foto-perfil.webp" />
-          </div>
+          <ProfilePicture />
         </div>
         <div className="companies-i-worked-on">
           <div className="divider" />
