@@ -48,5 +48,6 @@ module.exports = {
         icon: `src/images/favicon.ico`, // This path is relative to the root of the site.
       },
     },
+    '@chakra-ui/gatsby-plugin',
   ],
 };
