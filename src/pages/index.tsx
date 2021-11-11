@@ -1,8 +1,19 @@
-import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
-import styled from 'styled-components';
+import { StaticImage } from 'gatsby-plugin-image';
+import {
+  Box,
+  Container,
+  Grid,
+  Image,
+  Heading,
+  Text,
+  Flex,
+  Stack,
+  Link,
+  GridItem,
+} from '@chakra-ui/react';
 
-import '../global.scss';
+import '../global.css';
 
 import SEO from '../components/seo';
 import ContactLinks from '../components/ContactLinks';
@@ -11,284 +22,104 @@ import CeibalLogo from '../images/logo-horizontal-ceibal.svg';
 import FastcallLogo from '../images/logo-fastcall.svg';
 import DeviceMagicLogo from '../images/logo-device-magic.svg';
 
-const StyledIndexPageContainer = styled.div`
-  background-color: var(--background-black);
-  min-height: 100vh;
-  color: white;
-  font-family: 'IBMPlex';
-  h2 {
-    text-align: center;
-    @media (min-width: 576px) {
-      font-size: 2rem;
-    }
-  }
-  .desktop-container {
-    max-width: 1440px;
-    margin: 0 auto;
-    @media (min-width: 576px) {
-      padding: 0 0 0 4rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      max-width: 1440px;
-    }
-    .presentation {
-      display: flex;
-      justify-content: space-between;
-      .left-panel {
-        @media (min-width: 576px) {
-          margin-top: 2rem;
-        }
-        .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 100%;
-          padding-top: 1rem;
-          .logo {
-            margin-left: 1rem;
-            @media (min-width: 576px) {
-              margin-left: 0;
-            }
-            .mobile-logo {
-              @media (min-width: 576px) {
-                display: none;
-              }
-            }
-            .desktop-logo {
-              display: none;
-              @media (min-width: 576px) {
-                display: block;
-              }
-            }
-          }
-          .contact-links {
-            margin-right: 1rem;
-            @media (min-width: 576px) {
-              display: none;
-            }
-            img {
-              width: 1.5rem;
-              height: 1.5rem;
-              margin-left: 0.5rem;
-            }
-          }
-        }
-        .content-text {
-          color: white;
-          display: flex;
-          flex-direction: column;
-          @media (min-width: 576px) {
-            margin-top: 0;
-            display: flex;
-            flex-direction: column;
-          }
-          h1 {
-            text-align: center;
-            margin-top: 1rem;
-            @media (min-width: 576px) {
-              font-size: 4rem;
-              text-align: left;
-              margin-top: 0.5rem;
-            }
-          }
-          .text {
-            font-family: 'IBMPlex';
-            margin: 1rem 1.5rem 3rem;
-            @media (min-width: 576px) {
-              margin: 0;
-              width: 26rem;
-            }
-          }
-          .contact-links-desktop {
-            display: none;
-            align-self: center;
-            @media (min-width: 576px) {
-              display: block;
-            }
-            img {
-              width: 2rem;
-              height: 2rem;
-              margin: 2rem 0.5rem;
-            }
-          }
-        }
-        .photo-mobile {
-          position: relative;
-          @media (min-width: 576px) {
-            display: none;
-          }
-        }
-      }
-      .photo {
-        position: relative;
-        &:after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 3rem;
-          background: linear-gradient(transparent, var(--background-black));
-          left: 0;
-          bottom: 0;
-        }
-      }
-      .photo-desktop {
-        display: none;
-        @media (min-width: 576px) {
-          display: block;
-        }
-      }
-    }
-    .divider {
-      border-top: 1px solid #cfcfcf;
-      width: 18rem;
-      align-self: center;
-      padding-top: 2rem;
-      @media (min-width: 576px) {
-        padding-top: 4rem;
-        width: 40rem;
-      }
-    }
-    .companies-i-worked-on {
-      display: flex;
-      flex-direction: column;
-      margin: 0 1rem;
-      padding-bottom: 2rem;
-      @media (min-width: 576px) {
-        margin: 4rem 4rem 4rem 0;
-      }
-      .companies-logos-container {
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        @media (min-width: 576px) {
-          margin-top: 4rem;
-        }
-        a {
-          width: 75%;
-          img {
-            width: 100%;
-          }
-        }
-        @media (min-width: 576px) {
-          flex-direction: row;
-        }
-      }
-    }
-    .contact {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0 1rem;
-      padding-bottom: 2rem;
-      @media (min-width: 576px) {
-        margin: 0 4rem 4rem 0;
-      }
-      a {
-        background-color: white;
-        color: black;
-        text-decoration: none;
-        width: 10rem;
-        border-radius: 5px;
-        padding: 0.5rem 1rem;
-        text-align: center;
-        margin-top: 2rem;
-      }
-    }
-  }
-`;
-
 const IndexPage = () => (
   <>
     <SEO />
-    <StyledIndexPageContainer>
-      <div className="desktop-container">
-        <div className="presentation">
-          <div className="left-panel">
-            <div className="header">
-              <div className="logo">
-                <img
+    <Box bg="black">
+      <Container maxW="1440px" pl="16">
+        <Box as="section">
+          <Grid gridTemplateColumns={['repeat(12, 1fr)']}>
+            <GridItem colSpan={4} mt={16}>
+              <Box mb={4}>
+                <Image
                   alt="Logo de Francisco Cobas"
-                  className="desktop-logo"
+                  display={['none', 'block']}
                   height={125}
                   src={FCLogo}
                   width={125}
                 />
-                <img
+                <Image
                   alt="Logo de Francisco Cobas"
-                  className="mobile-logo"
+                  display={['block', 'none']}
                   height={70}
                   src={FCLogo}
                   width={70}
                 />
-              </div>
-              <div className="contact-links">
+              </Box>
+              <Box display={['block', 'none']}>
                 <ContactLinks />
-              </div>
-            </div>
+              </Box>
 
-            <div className="content-text">
-              <h1>Welcome back</h1>
-              <div className="photo photo-mobile">
-                <StaticImage alt="Foto de perfil" src="../images/foto-perfil.webp" />
-              </div>
-              <div className="text">
-                <p>
+              <Flex direction="column">
+                <Heading as="h1" color="white" fontSize="6xl" mb={6}>
+                  Welcome back
+                </Heading>
+                <Box display={['block', 'none']}>
+                  <StaticImage alt="Foto de perfil" src="../images/foto-perfil.webp" />
+                </Box>
+                <Text fontSize="lg" pb={4}>
                   Hello! I’m Francisco Cobas, I do web development writing Javascript & Typescript
                   code.
-                </p>
-                <p>
+                </Text>
+                <Text fontSize="lg" pb={4}>
                   I have a considerable experience working with React in a wide range of projects.
-                </p>
-                <p>
+                </Text>
+                <Text fontSize="lg" pb={4}>
                   Also I have a background of Operating System experience wich combine perfectly
                   with my front end abilities. I worked in many industries such as SaaS products,
                   Marketing, Healthcare, Education and more.
-                </p>
-                <p>
+                </Text>
+                <Text fontSize="lg" pb={12}>
                   Lately I’ve been working as a cooperative partener at SUBTE and doing freelancing
                   jobs.
-                </p>
-              </div>
-              <div className="contact-links-desktop">
-                <ContactLinks />
-              </div>
-            </div>
-          </div>
-          <div className="photo photo-desktop">
-            <StaticImage alt="Foto de perfil" src="../images/foto-perfil.webp" />
-          </div>
-        </div>
-        <div className="companies-i-worked-on">
-          <div className="divider" />
-          <h2>Companies that trusted on me</h2>
-          <div className="companies-logos-container">
-            <a href="https://www.ceibal.edu.uy/" rel="noopener noreferrer" target="_blank">
-              <img alt="Logo de Ceibal" height="112" src={CeibalLogo} width="367" />
-            </a>
-            <a href="https://fastcall.com/" rel="noopener noreferrer" target="_blank">
-              <img alt="Logo de Fastcall" height="78" src={FastcallLogo} width="367" />
-            </a>
-            <a href="https://www.devicemagic.com/" rel="noopener noreferrer" target="_blank">
-              <img alt="Logo de Device Magic" height="78" src={DeviceMagicLogo} width="367" />
-            </a>
-          </div>
-        </div>
-        <div className="contact">
-          <div className="divider" />
-          <h2>Do you want to build a project together?</h2>
-          <a
+                </Text>
+                <Stack direction={['row']} justifyContent="center" spacing={5}>
+                  <ContactLinks />
+                </Stack>
+              </Flex>
+            </GridItem>
+            <GridItem colEnd={13} colStart={6}>
+              <StaticImage alt="Foto de perfil" src="../images/foto-perfil.webp" />
+            </GridItem>
+          </Grid>
+        </Box>
+
+        <Box alignItems="center" as="section" display="flex" flexDirection={'column'}>
+          <Box as="span" borderTop="1px solid white" my={10} w="50%" />
+          <Heading my={10}>Companies that trusted on me</Heading>
+          <Stack direction="row" spacing={14}>
+            <Link href="https://www.ceibal.edu.uy/" rel="noopener noreferrer" target="_blank">
+              <Image alt="Logo de Ceibal" height="112" src={CeibalLogo} width="367" />
+            </Link>
+            <Link href="https://fastcall.com/" rel="noopener noreferrer" target="_blank">
+              <Image alt="Logo de Fastcall" height="78" src={FastcallLogo} width="367" />
+            </Link>
+            <Link href="https://www.devicemagic.com/" rel="noopener noreferrer" target="_blank">
+              <Image alt="Logo de Device Magic" height="78" src={DeviceMagicLogo} width="367" />
+            </Link>
+          </Stack>
+        </Box>
+        <Box alignItems="center" as="section" display="flex" flexDirection="column" pb={20}>
+          <Box as="span" borderTop="1px solid white" my={10} w="50%" />
+          <Heading as="h2" my={10}>
+            Do you want to build a project together?
+          </Heading>
+          <Link
+            _hover={{ textDecoration: 'none' }}
+            bg="white"
+            borderRadius="5"
+            color="black"
             href={`mailto:fcarocena@gmail.com?&subject=Hello Francisco, let's go to the 🌔with this project!`}
+            px={16}
+            py={2}
             rel="noreferrer"
             target="_blank"
           >
             Contact me
-          </a>
-        </div>
-      </div>
-    </StyledIndexPageContainer>
+          </Link>
+        </Box>
+      </Container>
+    </Box>
   </>
 );
 

@@ -1,111 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import styled from 'styled-components';
 
 import TwitchSvg from './svg-components/TwitchSvg';
 import TwitterSvg from './svg-components/TwitterSvg';
 import LinkedInSvg from './svg-components/LinkedInSvg';
-
-const SurveyFormContainer = styled.div`
-  .error {
-    border: 3px solid rgb(172, 68, 68);
-  }
-
-  form {
-    background: #ffffff20;
-    padding: 1rem 0 3rem;
-    display: flex;
-    justify-content: center;
-    border-radius: 5px;
-    & > div {
-      width: 400px;
-      display: flex;
-      flex-direction: column;
-    }
-    input,
-    select {
-      height: 3rem;
-      padding: 0 1rem;
-      margin: 1rem 0;
-      border-radius: 5px;
-      font-size: 1rem;
-      border: none;
-    }
-    textarea {
-      height: 10rem;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-radius: 5px;
-      font-size: 1rem;
-      border: none;
-    }
-    button {
-      height: 3rem;
-      background: #e72f73;
-      margin: 0 3rem;
-      color: white;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-    }
-    .platform-text {
-      margin-bottom: 0;
-    }
-    .platform-icons-container {
-      display: flex;
-      justify-content: space-between;
-      margin: 1rem 0;
-      button {
-        svg {
-          width: 2rem;
-          height: 2rem;
-        }
-        &:hover {
-          background: #e72f7258;
-          svg {
-            fill: white;
-          }
-        }
-        &.active {
-          background: #e72f73;
-          svg {
-            fill: white;
-          }
-        }
-      }
-    }
-    p {
-      text-align: center;
-      &.error-msg {
-        text-align: left;
-        margin-top: 0;
-      }
-    }
-    .consent-container {
-      display: flex;
-      align-items: center;
-      input {
-        width: 2rem;
-        height: 2rem;
-      }
-      label {
-        margin-left: 1rem;
-        text-align: left;
-      }
-    }
-    button[type='button'] {
-      height: 3.5rem;
-      width: 3.5rem;
-      background: white;
-      margin: 0;
-    }
-    button[type='submit'] {
-      font-weight: bold;
-      margin-top: 1rem;
-      font-size: 1.1rem;
-    }
-  }
-`;
 
 type Inputs = {
   role: string;
@@ -137,7 +35,7 @@ function SurveyForm(): JSX.Element {
   };
 
   return (
-    <SurveyFormContainer>
+    <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <select
@@ -226,7 +124,7 @@ function SurveyForm(): JSX.Element {
           <button type="submit">SUBMIT</button>
         </div>
       </form>
-    </SurveyFormContainer>
+    </div>
   );
 }
 
