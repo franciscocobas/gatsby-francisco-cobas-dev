@@ -1,19 +1,6 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import {
-  Box,
-  Container,
-  Grid,
-  Image,
-  Heading,
-  Text,
-  Flex,
-  Stack,
-  Link,
-  GridItem,
-  List,
-  ListItem,
-} from '@chakra-ui/react';
+import { Box, Grid, Image, Heading, Text, Stack, Link, GridItem, List } from '@chakra-ui/react';
 
 import '../global.css';
 
@@ -73,7 +60,7 @@ const IndexPage = () => (
           <StaticImage alt="Foto retrato mía" src="../images/foto-perfil.webp" />
         </GridItem>
       </Grid>
-      <Box as="hr" maxW={'60%'} mx="auto" my={10} />
+      <Box as="hr" maxW={'60%'} mx="auto" my={16} />
       <Box as="section" maxW={'container.xl'} mx={['10', 'auto']}>
         <Heading fontSize={['3xl', '5xl']} textAlign="center">
           Companies that trusted on me
@@ -96,7 +83,7 @@ const IndexPage = () => (
           </Link>
         </Stack>
       </Box>
-      <Box as="hr" maxW={'60%'} mx="auto" my={10} />
+      <Box as="hr" maxW={'60%'} mx="auto" my={16} />
       <Box
         alignItems="center"
         as="section"
@@ -104,7 +91,7 @@ const IndexPage = () => (
         flexDirection="column"
         maxW={'container.xl'}
         mx={['10', 'auto']}
-        pb={10}
+        pb={16}
       >
         <Heading fontSize={['3xl', '4xl']} textAlign="center">
           Do you want to build a project together?
@@ -116,6 +103,7 @@ const IndexPage = () => (
           color="black"
           display="inline-block"
           fontSize={'xl'}
+          href={`mailto:fcarocena@gmail.com?&subject=Hello Francisco, let's go to the 🌔with this project!`}
           mt={10}
           px="10"
           py="2"
@@ -124,6 +112,31 @@ const IndexPage = () => (
         >
           Contact me
         </Link>
+      </Box>
+      <Box as="footer" pb={6}>
+        <Text color="whiteAlpha.400" mx={10} textAlign="center">
+          Site designed and developed by{' '}
+          <Link
+            _hover={{ textDecoration: 'none' }}
+            href="https://twitter.com/mrRobotUy"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            @mrRobotUy
+          </Link>{' '}
+          using{' '}
+          <Link
+            _hover={{ textDecoration: 'none' }}
+            href="https://www.gatsbyjs.com/"
+            target="_blank"
+          >
+            Gatsby
+          </Link>{' '}
+          and{' '}
+          <Link _hover={{ textDecoration: 'none' }} href="https://chakra-ui.com/" target="_blank">
+            chakra UI
+          </Link>
+        </Text>
       </Box>
     </Box>
   </>
