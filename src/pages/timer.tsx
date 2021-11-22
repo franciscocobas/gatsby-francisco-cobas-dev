@@ -1,99 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 
 import SEO from '../components/seo';
-import '../global.scss';
+import '../global.css';
 import logo from '../images/fc-logo.svg';
 import TwitterImg from '../images/twitter_white.svg';
 import TwitchSvg from '../images/twitch_white.svg';
-
-const StyledTimerPageComponent = styled.div`
-  background: black;
-  color: white;
-  min-height: 100vh;
-  p {
-    margin: 0;
-    padding: 0;
-    font-family: 'IBMPlexExtraLight';
-  }
-  .italic {
-    font-family: 'IBMPlexExtraLightItalic';
-  }
-  .main-container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .header .logo {
-    width: 9rem;
-    height: 9rem;
-  }
-  .header form input {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 5px;
-    font-size: 1.5rem;
-    -webkit-appearance: none;
-    -moz-appearance: textfield;
-    padding: 0 1rem;
-    text-align: center;
-  }
-  .header form span {
-    font-size: 2rem;
-    margin: 0 0.5rem;
-  }
-  .header form button {
-    border-radius: 50%;
-    width: 4.5rem;
-    height: 4.5rem;
-    border: 1px solid gray;
-    cursor: pointer;
-    margin-left: 2rem;
-    font-size: 1.2rem;
-    background: rgb(177, 177, 177);
-  }
-
-  .timer-container {
-    font-size: 3.5rem;
-    font-family: 'IBMPlexExtraLight';
-  }
-  .clock {
-    font-size: 9rem;
-  }
-
-  .timer-and-social-networks-container {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-  }
-
-  .social-networks-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .social-networks-container > div {
-    display: flex;
-    align-items: center;
-    margin: 1rem 0;
-  }
-  .social-networks-container a {
-    margin-left: 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: white;
-    text-decoration: none;
-    font-family: 'IBMPlex';
-  }
-  .social-networks-container img {
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-`;
 
 const DEFAULT_TIMER_TIME = new Date(0, 0, 0, 0, 15, 0);
 
@@ -164,7 +76,7 @@ const IndexPage = () => {
   return (
     <>
       <SEO />
-      <StyledTimerPageComponent>
+      <div>
         <div className="main-container">
           <div className="header">
             <img alt="Logo de Francisco Cobas" className="logo" src={logo} />
@@ -220,7 +132,7 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-      </StyledTimerPageComponent>
+      </div>
     </>
   );
 };
