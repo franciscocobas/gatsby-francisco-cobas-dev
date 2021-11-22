@@ -18,6 +18,11 @@ const theme = {
   colors: {
     black: '#050505',
   },
+  sizes: {
+    container: {
+      xl: '1400px',
+    },
+  },
 };
 
 export default extendTheme(theme);
