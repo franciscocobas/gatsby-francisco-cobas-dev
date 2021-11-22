@@ -76,10 +76,10 @@ const IndexPage = () => (
             <Image alt="Logo Ceibal" src={CeibalLogo} w={[72, 80]} />
           </Link>
           <Link href="https://fastcall.com/" rel="noopener noreferrer" target="_blank">
-            <Image alt="Logo Ceibal" src={FastcallLogo} w={[72, 80]} />
+            <Image alt="Logo Fastcall" src={FastcallLogo} w={[72, 80]} />
           </Link>
           <Link href="https://www.devicemagic.com/" rel="noopener noreferrer" target="_blank">
-            <Image alt="Logo Ceibal" src={DeviceMagicLogo} w={[72, 80]} />
+            <Image alt="Logo Device Magic" src={DeviceMagicLogo} w={[72, 80]} />
           </Link>
         </Stack>
       </Box>
@@ -93,8 +93,96 @@ const IndexPage = () => (
         mx={['10', 'auto']}
         pb={16}
       >
-        <Heading fontSize={['3xl', '4xl']} textAlign="center">
-          Do you want to build a project together?
+        <Heading fontSize={['3xl', '4xl']} position="relative" textAlign="center">
+          Intersted in build something with <br />
+          <Box
+            _after={{
+              position: 'absolute',
+              content: '""',
+              width: '120px',
+              height: '0px',
+              background: '#61dafb',
+              bottom: '-5px',
+              left: '-10px',
+              transition: 'all 0.2s ease-in-out',
+              borderRadius: '3px',
+            }}
+            _hover={{
+              _after: {
+                height: '3px',
+              },
+            }}
+            as="span"
+          >
+            React
+          </Box>
+          ,{' '}
+          <Box
+            _after={{
+              position: 'absolute',
+              content: '""',
+              width: '0px',
+              height: '3px',
+              background: '#3178c6',
+              bottom: '-5px',
+              left: '110px',
+              transition: 'all 0.2s ease-in-out',
+              borderRadius: '3px',
+            }}
+            _hover={{
+              _after: {
+                width: '190px',
+              },
+            }}
+            as="span"
+          >
+            Typescript
+          </Box>{' '}
+          and{' '}
+          <Box
+            _after={{
+              position: 'absolute',
+              content: '""',
+              width: '130px',
+              height: '3px',
+              backgroundColor: 'transparent',
+              bottom: '-5px',
+              right: '225px',
+              transition: 'all 0.2s ease-in-out',
+              borderRadius: '3px',
+            }}
+            _hover={{
+              _after: {
+                backgroundColor: 'white',
+              },
+            }}
+            as="span"
+          >
+            NextJS
+          </Box>{' '}
+          or{' '}
+          <Box
+            _after={{
+              position: 'absolute',
+              content: '""',
+              width: '0px',
+              height: '3px',
+              background: '#7026B9',
+              bottom: '-5px',
+              right: '-5px',
+              transition: 'all 0.2s ease-in-out',
+              borderRadius: '3px',
+            }}
+            _hover={{
+              _after: {
+                width: '190px',
+              },
+            }}
+            as="span"
+          >
+            GatsbyJS
+          </Box>
+          ?
         </Heading>
         <Link
           _hover={{ textDecoration: 'none' }}
