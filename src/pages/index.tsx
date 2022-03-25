@@ -12,10 +12,6 @@ import FastcallLogo from '../images/logo-fastcall.svg';
 import DeviceMagicLogo from '../images/logo-device-magic.svg';
 
 const IndexPage = () => {
-  function vibrate() {
-    navigator.vibrate(100);
-  }
-
   return (
     <>
       <SEO />
@@ -91,8 +87,6 @@ const IndexPage = () => {
               }}
               target="_blank"
               w={60}
-              onClick={vibrate}
-              onMouseOver={vibrate}
             >
               <StaticImage
                 alt="Logo cooperativa de trabajo SUBTE"
@@ -112,8 +106,6 @@ const IndexPage = () => {
               }}
               target="_blank"
               w={60}
-              onClick={vibrate}
-              onMouseOver={vibrate}
             >
               <StaticImage alt="Logo de Hack Academy" src="../images/ha.webp" />
             </Link>
