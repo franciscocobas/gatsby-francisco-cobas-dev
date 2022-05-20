@@ -1,4 +1,6 @@
+import { Box, Center, Container, Heading, Text } from '@chakra-ui/react';
 import { graphql } from 'gatsby';
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
 
 import SEO from '../components/seo';
@@ -18,37 +20,34 @@ type BlogPostTemplateTypes = {
 
 const BlogPostTemplate = ({ data: { markdownRemark: post } }: BlogPostTemplateTypes) => {
   return (
-    <div>
+    <Box color="black">
       <SEO
         article
         description={post.frontmatter.description}
         title={`${post.frontmatter.title} | Francisco Cobas Dev`}
       />
-      <div className="desktop-container">
-        <header>
+      <Container maxW="container.xl">
+        <Box as="header">
           <img alt="Logo de Francisco Cobas Dev" src={FCLogo} />
-          <p>
-            <span className="italic">b</span>log
-          </p>
-        </header>
-        <article>
-          <h1 className="blog-entry-title">{post.frontmatter.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        </article>
-      </div>
-    </div>
+        </Box>
+        <Container as="article" maxW="container.md">
+          <Heading className="blog-entry-title">{post.frontmatter.title}</Heading>
+          <Box dangerouslySetInnerHTML={{ __html: post.html }} />
+        </Container>
+      </Container>
+    </Box>
   );
 };
 
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query BlogPostByPath($id: String!) {
+    markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        path
+        slug
         title
         description
       }

@@ -3,6 +3,20 @@
   --magenta: #e72f73;
 }
 
+.link-active {
+  font-family: 'IBMPlex';
+}
+
+.menu-container {
+  width: 80vw;
+}
+
+@media screen and (min-width: 576px) {
+  .menu-container {
+    width: 50vw;
+  }
+}
+
 @font-face {
   font-family: 'IBMPlex';
   src: url('./fonts/IBMPlexSans-Regular.ttf');

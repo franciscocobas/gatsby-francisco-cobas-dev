@@ -3,7 +3,6 @@ const theme = {
   styles: {
     global: {
       body: {
-        color: 'white',
         fontFamily: 'IBMPlex',
       },
     },

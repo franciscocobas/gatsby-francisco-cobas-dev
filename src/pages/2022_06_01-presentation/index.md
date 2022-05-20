@@ -1,9 +1,10 @@
 ---
-path: '/presentacion-de-mi-blog'
+slug: 'presentacion-de-mi-blog'
 date: 2021-07-28T17:00:00.962Z
 title: 'Mi primer entrada de Blog: Presentación del espacio'
 description: 'En esta entrada, presento mi Blog y además te cuento de qué se trata este proyecto y qué temas voy a estar cubriendo. Entrá y mirá de qué te hablo.'
-public: false
+image: 2022_06_01-presentation.jpg
+public: true
 ---
 
 Hola, bienvenidos y benvenidas a mi primer entrada de blog. Hace mucho tiempo que tengo ganas de tener un espacio donde pueda escribir de diferentes temas vinculados a la **programación web**. Quieras o no, hace más de 8 años que vengo vinculado a este mundo y la experiencia y el tiempo te dan conocimientos que a mi modo de ver el mundo, está bueno compartir.
